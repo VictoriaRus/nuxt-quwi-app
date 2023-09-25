@@ -1,10 +1,10 @@
 <template>
-<div>header</div>
+  <div>tasks</div>
 </template>
 
 <script>
 export default {
-  name: "TheHeader"
+  name: "index"
 }
 </script>
 
