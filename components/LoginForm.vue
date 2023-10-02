@@ -1,5 +1,5 @@
 <template>
-  <form class="login-form">
+  <form v-on:submit.prevent class="login-form">
     <div class="form-logo">
       <Logo/>
     </div>
@@ -12,7 +12,8 @@
     <div class="form-but">
       <Button :onClick="login">Login</Button>
     </div>
-    <p class="error">{{ isAuth }}</p>
+    <p class="error" v-if="error.email">{{ error.email }}</p>
+    <p class="error" v-if="error.password">{{ error.password }}</p>
   </form>
 </template>
 
@@ -23,7 +24,7 @@ import Button from "~/components/Button";
 
 export default {
   name: "LoginForm",
-  components: {Logo, Input, Button},
+  components: { Logo, Input, Button },
   data() {
     return {
       email: "",
@@ -31,8 +32,8 @@ export default {
     }
   },
   computed: {
-    isAuth() {
-      return this.$store.state.authenticated
+   error() {
+      return this.$store.getters.getError
     }
   },
   methods: {
@@ -40,7 +41,7 @@ export default {
       this.$store.dispatch("goLogin", {
         email: this.email,
         password: this.password,
-      }).then(() => this.$router.push("/"))
+      }).then(() => this.$router.push("/tasks"))
     },
   },
 }
@@ -76,5 +77,11 @@ export default {
 .error {
   margin-top: 10px;
   color: #c44512;
+}
+
+@media screen and (max-width: 415px) {
+  .login-form {
+    width: 95%;
+  }
 }
 </style>

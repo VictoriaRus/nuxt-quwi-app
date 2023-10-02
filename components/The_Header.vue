@@ -15,7 +15,7 @@ import Logo from "@/components/Logo";
 
 export default {
   name: "The_Header",
-  components: {Logo},
+  components: { Logo },
   methods: {
     async logout() {
       await fetch("https://api.quwi.com/v2/auth/logout", {
@@ -24,7 +24,7 @@ export default {
           "anywhere": true
         }),
         headers: {
-          "Authorization": `Bearer ${localStorage.getItem("token")}`,
+          "Authorization": `Bearer ${ localStorage.getItem("token") }`,
           "Content-type": "application/json",
         }
       })
@@ -65,5 +65,11 @@ export default {
 
 .header a:hover {
   background-color: #e0e0e0;
+}
+
+@media screen and (max-width: 415px) {
+  .header a {
+    padding: 0 5px;
+  }
 }
 </style>

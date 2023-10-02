@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style scoped>
-.logo{
+.logo {
   opacity: .6;
 }
 </style>

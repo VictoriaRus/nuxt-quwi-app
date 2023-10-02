@@ -11,13 +11,13 @@ import TaskCard from "@/components/TaskCard";
 
 export default {
   name: "TasksList",
-  components: {TaskCard},
+  components: { TaskCard },
   props: ["tasks"],
 }
 </script>
 
 <style scoped>
-.tasks-list{
+.tasks-list {
   padding-top: 86px;
 }
 </style>

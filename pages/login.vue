@@ -1,5 +1,5 @@
 <template>
-    <LoginForm/>
+  <LoginForm />
 </template>
 
 <script>
@@ -7,8 +7,8 @@ import LoginForm from "~/components/LoginForm";
 
 export default {
   name: "login",
-  layout:"empty",
-  components: {LoginForm},
+  layout: "empty",
+  components: { LoginForm },
 }
 </script>
 

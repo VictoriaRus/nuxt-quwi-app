@@ -10,13 +10,13 @@ import The_Header from "@/components/The_Header";
 
 export default {
   name: "default",
-  components:{The_Header},
+  components: { The_Header },
 }
 </script>
 
 <style scoped>
 .default {
-  font-family: Arial,Helvetica,sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   background-color: #f4f4f4;
   min-height: 100vh;
   font-size: 14px;
